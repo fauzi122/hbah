@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Guru;
-use App\Models\VisiMisi;
+use App\Models\Visimisi;
 use App\Models\Sejarah;
 use App\Models\Sambutan;
 use App\Models\Event;
@@ -22,7 +22,7 @@ class FrontendController extends Controller
   public function index()
   {
     $berita = Post::orderBy('id', 'ASC')->limit(6)->get();
-    $visi = VisiMisi::where('id', 1)->first();
+    $visi = Visimisi::where('id', 1)->first();
     $sejarah = Sejarah::where('id', 1)->first();
     $profil= Profilsekolah::where('id', 1)->first();
     $sambutan= Sambutan::where('id', 1)->first();
