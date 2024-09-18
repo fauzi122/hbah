@@ -18,10 +18,10 @@
                         {{--  <h4>
                             <i class="fa fa-star-o"></i>MY - SEALS<i class="fa fa-star-o"></i>
                         </h4>  --}}
-                        <h2>
+                        {{-- <h2>
                             YAYASAN <br><span><i class="fa fa"></i>FADILAH ILMI </span> PRATAMA
                            
-                        </h2>
+                        </h2> --}}
                         {{--  <a href="/daftar"><i class="fa fa-paper-plane"></i>DAFTAR SANTRI BARU</a>  --}}
                        
                     </div>
@@ -45,7 +45,7 @@
                     </div>
                 </div> --}}
                 <div class="item active">
-                    <img src="{{ asset('frontend-assets/images/slide3.jpg') }}" alt="slide2" />
+                    <img src="{{ asset('frontend-assets/images/slide6.jpg') }}" alt="slide2" />
                     <div class="carousel-caption">
                         <h4>
                             <i class="fa fa-star-o"></i>WE ARE BEST<i class="fa fa-star-o"></i>
@@ -76,7 +76,7 @@
     <div class="container">
       <div class="col-sm-5">
           <p></p>
-        <img src="{{asset('assets/img/principal2.jpg') }}" alt="Our Principal" />
+        <img src="{{ Storage::url('public/guru/'.$sambutan->foto) }}" alt="Our Principal"style="width: 400px" height="500px" />
 
     </div>
       <div class="col-sm-7 principal-intro">

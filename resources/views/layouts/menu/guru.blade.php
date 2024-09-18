@@ -1,6 +1,6 @@
 
  
-  <li class="treeview">
+  {{-- <li class="treeview">
     <a href="#">
       <i class="fa fa-calendar"></i>
       <span>Jadwal Mengajar</span>
@@ -15,7 +15,7 @@
       <li><a href="{{ url('/elearning/jadwal') }}"><i class="fa fa-circle-o"></i> Rekap Absem</a></li>
   
     </ul>
-  </li>
+  </li> --}}
 
 
 
@@ -41,7 +41,7 @@
  
 
   @can('Master Soal')
-  <li class="treeview">
+  {{-- <li class="treeview">
     <a href="#">
       <i class="fa fa-laptop"></i>
       <span>Master Soal</span>
@@ -56,7 +56,7 @@
      
 
     </ul>
-  </li>
+  </li> --}}
   @endcan
 
   {{--  @can('Menu Cetak')
@@ -85,8 +85,8 @@
     </a>
     <ul class="treeview-menu">
       
-        <li><a href="{{ url('/mapel') }}"><i class="fa fa-circle-o"></i> Import Mapel</a></li>
-        <li><a href="{{ url('/datajawal') }}"><i class="fa fa-circle-o"></i> Import Jadwal</a></li>
+        {{-- <li><a href="{{ url('/mapel') }}"><i class="fa fa-circle-o"></i> Import Mapel</a></li>
+        <li><a href="{{ url('/datajawal') }}"><i class="fa fa-circle-o"></i> Import Jadwal</a></li> --}}
         <li><a href="{{ url('/data') }}"><i class="fa fa-circle-o"></i> Import Santri</a></li>
         <li><a href="{{ url('/biodata/santri') }}"><i class="fa fa-circle-o"></i> Import Biodata Santri</a></li>
    

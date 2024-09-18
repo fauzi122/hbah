@@ -60,10 +60,10 @@
                     <div class="event-date">
                         {{--  <p><span>10</span> SEP</p>  --}}
                     </div>
-                    <h3>YAYASAN MUTIARA AL-QURAN INDONESIA</h3>
+                    <h3>YAYASAN FADILAH ILMI PRATAMA</h3>
                    {{--  <h6><i class="fa fa-map-marker"></i>Playground</h6>  --}}
                     {{-- <p>Rekening Donasi :</p> --}}
-                    <img src="{{ asset('frontend-assets/images/a.jpg') }}" height="150" width="450" />
+                    {{-- <img src="{{ asset('frontend-assets/images/a.jpg') }}" height="150" width="450" /> --}}
                     {{--  <a href="#"><i class="fa fa-paper-plane"></i> KNOW MORE</a>  --}}
                 </div>
                 

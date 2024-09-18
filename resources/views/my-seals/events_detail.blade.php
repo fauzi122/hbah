@@ -35,9 +35,9 @@
 						<div class="event-date">
 							{{--  <p><span>10</span> SEP</p>  --}}
 						</div>
-						<h3>SMA NEGERI 1 CISEENG</h3>
+						<h3>YAYASAN FADILAH ILMI PRATAMA</h3>
 						 {{--  <h6><i class="fa fa-map-marker"></i> Jalan Cibeuteung Muara, Kp. Bojong Indah Rt 02/06, Putat Nutug, Ciseeng, Bogor, West Java 16120</h6>  --}}
-						<p>Jalan Cibeuteung Muara, Kp. Bojong Indah Rt 02/06, Putat Nutug, Ciseeng, Bogor, West Java 16120</p>
+						{{-- <p>Jalan Cibeuteung Muara, Kp. Bojong Indah Rt 02/06, Putat Nutug, Ciseeng, Bogor, West Java 16120</p> --}}
 						{{--  <a href="#"><i class="fa fa-paper-plane"></i> KNOW MORE</a>  --}}
 					</div>
 				
