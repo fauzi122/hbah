@@ -13,7 +13,7 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item">
-                    <img src="{{ asset('frontend-assets/images/2.jpg') }}" alt="slide1" />
+                    <img src="{{ asset('frontend-assets/images/23.jpg') }}" alt="slide1" />
                     <div class="carousel-caption">
                         {{--  <h4>
                             <i class="fa fa-star-o"></i>MY - SEALS<i class="fa fa-star-o"></i>
