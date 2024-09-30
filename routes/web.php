@@ -49,6 +49,7 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('/daftar', 'daftar')->name('daftar');
     Route::get('/form/pendaftaran-anak/{id}', 'anak');
     Route::get('/form/pendaftaran-dewasa/{id}', 'dewasa');
+    Route::get('/form/pendaftaran-sipp', 'sipp')->name('sipp');
 });
 
 Route::view('/sarpras', 'my-seals.events')->name('sarpras');
@@ -59,6 +60,10 @@ Route::controller(formulir\FormuliranakController::class)->group(function () {
 
 Route::controller(formulir\FormulirdewasaController::class)->group(function () {
     Route::post('/form/pendaftaran-dewasa', 'store');
+});
+
+Route::controller(BusinessRegistrationController::class)->group(function () {
+    Route::post('/form/pendaftaran-sipp', 'processForm');
 });
 
 

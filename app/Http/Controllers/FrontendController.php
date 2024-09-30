@@ -22,7 +22,7 @@ class FrontendController extends Controller
   public function index()
   {
     $berita = Post::orderBy('id', 'ASC')->limit(6)->get();
-    $visi = Visimisi::where('id', 1)->first();
+    $visi = visimisi::where('id', 1)->first();
     $sejarah = Sejarah::where('id', 1)->first();
     $profil= Profilsekolah::where('id', 1)->first();
     $sambutan= Sambutan::where('id', 1)->first();
@@ -78,6 +78,19 @@ class FrontendController extends Controller
     $profil= Profilsekolah::where('id', 1)->first();
     $priodeank=Priodedaftaranak::where('ket',1)->first();
     return view('my-seals.daftar',compact('profil','priodeank'));
+  }
+  public function sipp()
+  {
+    $profil= Profilsekolah::where('id', 1)->first();
+    $priodeank=Priodedaftaranak::where('ket',1)->first();
+    $num1 = rand(1, 10); // Generate random number for captcha
+    $num2 = rand(1, 10); // Generate random number for captcha
+    $captchaResult = $num1 + $num2; // Calculate the result of captcha
+
+    // Store the captcha result in session to validate later
+    session(['captcha_result' => $captchaResult]);
+
+    return view('my-seals.daftar_anggota',compact('profil','priodeank','num1', 'num2'));
   }
 
   public function anak($id)

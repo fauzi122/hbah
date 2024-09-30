@@ -21,11 +21,12 @@
                     <div class="event-date">
                         {{--  <p><span>10</span> SEP</p>  --}}
                     </div>
-                    <h3>YAYASAN MUTIARA AL-QURAN INDONESIA</h3>
-                   {{--  <h6><i class="fa fa-map-marker"></i>Playground</h6>  --}}
-                    {{-- <p>Rekening Donasi :</p> --}}
-                    <img src="{{ asset('frontend-assets/images/a.jpg') }}" height="250" width="450" />
-                    {{--  <a href="#"><i class="fa fa-paper-plane"></i> KNOW MORE</a>  --}}
+                    <h3>YAYASAN FADHILLAH ILMI</h3>
+                    <P></P>
+                    <h3> Infaq : BSI : - Yayasan Fadhillah Ilmi : 0138265366100 </h3>
+                    <h3> Infaq : BSI : - Yayasan Fadhillah Ilmi : 0138265366100 </h3>
+                    {{-- <h6><i class="fa fa-map-marker"></i>Playground</h6>  --}}
+                    
                 </div>
                 
             </div>
@@ -40,10 +41,8 @@
                                     {{--  <p><span>10</span> SEP</p>  --}}
                                 </div>
                                 <h3>LEGALITAS YAYASAN</h3>
-                               {{--  <h6><i class="fa fa-map-marker"></i>Playground</h6>  --}}
-                                {{-- <p>Rekening Donasi :</p> --}}
-                                <img src="{{ asset('frontend-assets/images/b.jpg') }}" height="250" width="450" />
-                                {{--  <a href="#"><i class="fa fa-paper-plane"></i> KNOW MORE</a>  --}}
+                                <p></p>
+                                <h3> Yayasan Fadhillah llmi Pratama Akta Pendirian No. 04 Tanggal 06 Februari 2012 Notaris Eddy Haryadi,S.H Kepmenkumham No AHU- 1267.AH.01.04. Tahun 2012 jl Jinjing RT 006 RW 002 Kel. Pasir Putih Kec. Sawangan Kota Depok Jawa Barat 08568037779<h3>
                             </div>
                             
                         </div>

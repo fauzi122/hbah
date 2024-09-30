@@ -7,7 +7,7 @@
 		<!-- Page Title Section -->
 		<div class="row page-title page-title-about">
 			<div class="container">
-				<h2><i class="fa fa-edit"></i>Pendaftaran Santri Baru</h2>
+				<h2><i class="fa fa-edit"></i>Pendaftaran Siswa Baru</h2>
 			</div>
 		</div>
 		
@@ -19,7 +19,7 @@
 						<center>
 							<div class="col-md-12">
 						
-						<h3><i class="fa fa-edit"></i>Pendaftaran Santri Baru</h3>
+						<h3><i class="fa fa-edit"></i>Pendaftaran Siswa Baru</h3>
 								@if (session('success'))
 								<div class="alert alert-success">
 									{{ session('success') }}
@@ -42,11 +42,11 @@
 						@endphp
 					
 						<a href="{{ url('/form/pendaftaran-dewasa/'.$id) }}" class="btn btn-lg btn-primary">
-						Formulir Kelas Dewasa</a>
+						Formulir Pendaftaran Siswa</a>
 							<p></p>
 						
-						<a href="{{ url('/form/pendaftaran-anak/'.$id) }}" class="btn btn-lg btn-success">
-							Formulir Kelas Anak-Anak</a>
+						{{-- <a href="{{ url('/form/pendaftaran-anak/'.$id) }}" class="btn btn-lg btn-success">
+							Formulir Kelas Anak-Anak</a> --}}
 <hr>
 							<p></p>
 							Informasi Pendaftaran : <b>{{ $priodeank->priode }}</b><p></p>
@@ -84,7 +84,7 @@
 								<i class="fa fa-map-marker"></i>
 							</div>
 							<div class="col-xs-11">
-								<p>Jl. Johar Baru Gg. UU No. 9B.RT 10 / RW 004 kel.Johar Baru,kec.Johar Baru Kota Jakarta Pusat</p>
+								<p>Kecamatan Kec. Sawangan, Kabupaten Kota Depok, Provinsi Prov. Jawa Barat </p>
 							</div>
 							<div class="clearfix"></div>
 						</div>
@@ -93,7 +93,7 @@
 								<i class="fa fa-envelope-o"></i>
 							</div>
 							<div class="col-xs-11">
-								<p>yayasan.mutqin@gmail.com</p>
+								<p>antialbar@gmail.com </p>
 							</div>
 							<div class="clearfix"></div>
 						</div>
@@ -102,7 +102,7 @@
 								<i class="fa fa-phone"></i>
 							</div>
 							<div class="col-xs-11">
-								<p>081511628787</p>
+								<p>08568037779</p>
 							</div>
 							<div class="clearfix"></div>
 						</div>

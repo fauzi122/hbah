@@ -60,7 +60,10 @@
                         <a href="{{ route('berita') }}"><i class="fa fa-file"></i>DONASI</a>
                     </li>
                     <li>
-                        <a href="{{ route('daftar') }}"><i class="fa fa-edit"></i>PENDAFTARAN SANTRI BARU</a>
+                        <a href="{{ route('daftar') }}"><i class="fa fa-edit"></i>PENDAFTARAN SISWA BARU</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('sipp') }}"><i class="fa fa-edit"></i>PENDAFTARAN ANGGOTA SIPP </a>
                     </li>
                 </ul>
             </div>

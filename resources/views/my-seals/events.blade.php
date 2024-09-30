@@ -61,10 +61,8 @@
                         {{--  <p><span>10</span> SEP</p>  --}}
                     </div>
                     <h3>YAYASAN FADILAH ILMI PRATAMA</h3>
-                   {{--  <h6><i class="fa fa-map-marker"></i>Playground</h6>  --}}
-                    {{-- <p>Rekening Donasi :</p> --}}
-                    {{-- <img src="{{ asset('frontend-assets/images/a.jpg') }}" height="150" width="450" /> --}}
-                    {{--  <a href="#"><i class="fa fa-paper-plane"></i> KNOW MORE</a>  --}}
+                    <h3> Infaq : BSI : - Yayasan Fadhillah Ilmi : 0138265366100 </h3>
+                    <h3> Infaq : BSI : - Yayasan Fadhillah Ilmi : 0138265366100 </h3>
                 </div>
                 
             </div>
