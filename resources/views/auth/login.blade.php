@@ -36,7 +36,7 @@
                           Keep me logged in
                         </label>
                       </div>
-                      <a href="{{ route('password.request') }}" class="link-primary text-decoration-none">Forgot password?</a>
+                      {{-- <a href="{{ route('password.request') }}" class="link-primary text-decoration-none">Forgot password?</a> --}}
                     </div>
                   </div>
                   <div class="col-12">
