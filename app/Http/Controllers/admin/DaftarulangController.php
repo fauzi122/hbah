@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use App\Models\Daftarulang;
-use App\User;
+use App\Models\User;
 
 class DaftarulangController extends Controller
 {

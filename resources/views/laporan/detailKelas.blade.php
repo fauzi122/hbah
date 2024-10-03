@@ -4,7 +4,7 @@
  
 @endsection
 @section('content')
-<?php include(app_path().'/functions/myconf.php'); ?>
+{{-- <?php include(app_path().'/functions/myconf.php'); ?> --}}
 <div class="col-md-8">
   <div class="box box-primary">
   	<div class="box-header with-border">

@@ -3,7 +3,7 @@
 @section('content')
 
       
-        <?php include(app_path().'/functions/myconf.php'); ?>
+        {{-- <?php include(app_path().'/functions/myconf.php'); ?> --}}
         @if(Auth::user()->status == 'A')
           <div class="callout callout-info">
             <h4>Selamat Datang, <b>{{ Auth::user()->nama }} (Admin)</b></h4>

@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Kelas extends Model
@@ -23,7 +23,7 @@ class Kelas extends Model
   }
   public function wali()
   {
-    return $this->belongsTo('App\User', 'id_wali');
+    return $this->belongsTo('App\Models\User', 'id_wali');
   }
   public function siswa()
   {

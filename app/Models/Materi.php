@@ -10,6 +10,6 @@ class Materi extends Model
 
   public function getUser()
   {
-  	return $this->belongsTo('App\User', 'id_user');
+  	return $this->belongsTo('App\Models\User', 'id_user');
   }
 }

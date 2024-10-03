@@ -11,7 +11,7 @@ use Yajra\DataTables\Facades\DataTables;
 
 
 
-use App\User;
+use App\Models\User;
 use App\Models\Aktifitas;
 
 class GuruController extends Controller
@@ -19,7 +19,7 @@ class GuruController extends Controller
   public function __construct()
   {
     $this->middleware('auth');
-    $this->middleware(['permission:guru.index|guru.create|guru.edit|guru.delete']);
+    // $this->middleware(['permission:guru.index|guru.create|guru.edit|guru.delete']);
 
   }
 

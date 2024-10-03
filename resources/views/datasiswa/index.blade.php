@@ -11,7 +11,7 @@
 <div class="box">
     <div class="box-header">
         <h3 class="box-title">
-          <i class="fa fa-list"></i> Data Santri Import</h3> 
+          <i class="fa fa-list"></i> Data Siswa Import</h3> 
           <p></p>
           <hr>
 		  @if (session('success'))
@@ -70,12 +70,12 @@
 				Format Upload</a>
 
 				<div class="pull-right">
-				<form action="/data/singkron-user" method="POST">
+				{{-- <form action="/data/singkron-user" method="POST">
 					@csrf
 					<button class="btn btn-danger my-3" type="submit">
 						<i class="fa fa-spinner"></i> Singkron User </button>   
 			   
-				</form>
+				</form> --}}
 				</div>
 			
       </div>

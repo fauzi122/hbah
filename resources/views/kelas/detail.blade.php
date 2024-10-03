@@ -9,7 +9,10 @@
   </ol>
 @endsection
 @section('content')
-<?php include(app_path().'/functions/myconf.php'); ?>
+<?php 
+$status_user = getStatus($user->status);
+
+?>
 <div class="col-md-9">
   <div class="box box-primary">
   	<div class="box-header with-border">

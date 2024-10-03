@@ -4,7 +4,11 @@
 
 @endsection
 @section('content')
-  <?php include(app_path().'/functions/myconf.php'); ?>
+  <?php 
+  $status_user = getStatus($user->status);
+// $jenis_soal = getJenisSoal($soal->jenis);
+
+  ?>
   <div class="col-md-12">
     <div class="box box-primary">
       <div class="box-header with-border">

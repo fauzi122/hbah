@@ -5,7 +5,7 @@
 @endsection
 @section('content')
 <?php $sesi = md5(rand(0000000000, mt_getrandmax())); ?>
-<?php include(app_path().'/functions/myconf.php'); ?>
+{{-- <?php include(app_path().'/functions/myconf.php'); ?> --}}
 @php
 $tanggal = date('Y-m-d');
 $day = date('D', strtotime($tanggal));

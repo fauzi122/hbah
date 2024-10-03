@@ -13,6 +13,7 @@ use App\Http\Controllers\front\PriodedaftulangController;
 use App\Http\Controllers\front\PendaftardewasaController;
 use App\Http\Controllers\front\ProfilController;
 use App\Http\Controllers\admin\DaftarulangController;
+use App\Http\Controllers\KelasController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -105,58 +106,6 @@ Route::prefix('crud')->group(function () {
 });
 
 
-// Route::group(['prefix' => 'front'], function () {	
-	
-//     Route::resource('/photo', 'front\PhotoController', ['except' => ['show', 'create', 'edit', 'update']]);
-//     Route::resource('/video', 'front\VideoController', ['except' => 'show']);
-// 	Route::resource('/post', 'front\PostController', ['except' => 'show']);
-// 	Route::resource('/event', 'front\EventController', ['except' => 'show']);
-// 	Route::resource('/profil', 'front\ProfilController', ['except' => 'show']);
-	
-// 	// list pendaftaran & daftar ulang
-// 	Route::resource('/priode-daftar', 'front\PriodedaftarController', ['except' => 'store','index_infaq']);
-// 	Route::get('/priode/pendaftaran', 'front\PriodedaftarController@index_infaq');
-	
-// 	Route::post('/priode-daftar', 'front\PriodedaftarController@store');
-	
-// 	Route::resource('/priode-ulang', 'front\PriodedaftulangController', ['except' => 'store']);
-// 	Route::post('/priode-ulang', 'front\PriodedaftulangController@store');
-	
-// 	Route::resource('/daftar-anak', 'front\PendaftarananakController', ['except' => 'show','index']);
-// 	Route::resource('/daftar-dewasa', 'front\PendaftardewasaController', ['except' => 'show','index']);
-// 	Route::resource('/daftar-ulang', 'admin\DaftarulangController', ['except' => 'show','index']);
-	
-// 	Route::get('/daftar-ulang/{id}', 'admin\DaftarulangController@index');
-// 	Route::get('/daftar-anak/{id}', 'front\PendaftarananakController@index');
-// 	Route::get('/daftar-dewasa/{id}', 'front\PendaftardewasaController@index');
-// 	Route::get('/daftar-anak/{id}/show', 'front\PendaftarananakController@show');
-// 	Route::get('/daftar-dewasa/{id}/show', 'front\PendaftardewasaController@show');
-
-	
-// 	Route::get('/edit/{id}', 'front\ProfilController@edit_sambutan');
-// 	Route::get('/edit-visimisi/{id}', 'front\ProfilController@edit_visimisi');
-// 	Route::get('/edit-sejarah/{id}', 'front\ProfilController@edit_sejarah');
-// 	Route::patch('/update-sejarah/{sejarah}', 'front\ProfilController@update_sejarah');
-// 	Route::patch('/update-visimisi/{visimisi}', 'front\ProfilController@update_visimisi');
-// 	Route::patch('/update/{sambutan}', 'front\ProfilController@update_sambutan');
-
-// 	});
-
-// 	Route::group(['prefix' => 'infaq'], function () {	
-
-// 	//infaq pendaftaran
-// 	// Route::resource('/pendaftaran', 'infaq\daftar\InfaqdafController', ['except' => 'delete']);
-// 	Route::get('/pendaftaran/{id}', 'infaq\daftar\InfaqController@index');
-
-// 	Route::get('/daftar/anak/{id}', 'infaq\daftar\InfaqdafsantriController@index');
-// 	Route::get('/daftar/dewasa/{id}', 'infaq\daftar\InfaqdafsantriController@index_d');
-// 	Route::get('/ulang/{id}', 'infaq\ulang\InfaqulangsantriController@index');
-	
-// 	Route::post('/daftar', 'infaq\daftar\InfaqdafsantriController@store');
-// 	Route::post('/ulang', 'infaq\ulang\InfaqulangsantriController@store');
-	
-	
-// });
 Route::prefix('front')->group(function () {	
     Route::controller(front\PhotoController::class)->group(function () {
         Route::resource('/photo', PhotoController::class, ['except' => ['show', 'create', 'edit', 'update']]);
@@ -312,31 +261,38 @@ Route::prefix('master')->group(function () {
         Route::controller(GuruController::class)->group(function () {
             Route::get('/', 'index')->name('master.guru');
             Route::get('data-guru', 'dataGuru')->name('master.data_guru');
-            Route::get('detail/{id}', 'detailGuru');
-            Route::get('ubah/{id}', 'ubahGuru');
+            Route::get('detail/{id}', 'detailGuru')->name('master.detail_guru');
+            Route::get('ubah/{id}', 'ubahGuru')->name('master.ubah_guru');
         });
     });
 
-    Route::controller(KelasController::class)->group(function () {
-        Route::get('kelas', 'index')->name('master.kelas');
-        Route::get('data-kelas', 'dataKelas')->name('master.data_kelas');
-        Route::get('kelas/detail/{id}', 'detailKelas')->name('master.detail_kelas');
-        Route::get('detail-kelas/', 'detailKelasSiswa')->name('master.detail_kelas_siswa');
-        Route::get('kelas/ubah/{id}', 'ubahKelas')->name('master.ubah_kelas');
+    Route::prefix('kelas')->group(function () {
+        Route::controller(KelasController::class)->group(function () {
+            Route::get('/', 'index')->name('master.kelas');
+            Route::get('data-kelas', 'dataKelas')->name('master.data_kelas'); // Route untuk data kelas
+            Route::get('detail/{id}', 'detailKelas')->name('master.detail_kelas');
+            Route::get('detail-kelas', 'detailKelasSiswa')->name('master.detail_kelas_siswa'); // Beri path yang berbeda
+            Route::get('ubah/{id}', 'ubahKelas')->name('master.ubah_kelas');
+        });
     });
+    
 
     Route::prefix('siswa')->group(function () {
         Route::controller(SiswaController::class)->group(function () {
-            Route::get('/', 'index')->name('siswa');
+            Route::get('/', 'index')->name('master.siswa'); // konsisten dengan prefix master
             Route::get('data-siswa', 'dataSiswa')->name('master.data_siswa');
-            Route::get('detail/{id}', 'detailSiswa');
-            Route::get('edit/{id}', 'editSiswa');
-            Route::get('delete', 'delete');
-            Route::get('get-btn-delete/{password}', 'getBtnDelete');
-            Route::get('delete-all', 'deleteAll');
+            Route::get('detail/{id}', 'detailSiswa')->name('master.detail_siswa');
+            Route::get('edit/{id}', 'editSiswa')->name('master.edit_siswa');
+            
+            // Untuk delete, gunakan POST atau DELETE
+            Route::delete('delete/{id}', 'deleteSiswa')->name('master.delete_siswa'); 
+            Route::delete('delete-all', 'deleteAll')->name('master.delete_all_siswa');
+
+            Route::get('get-btn-delete/{password}', 'getBtnDelete')->name('master.get_btn_delete_siswa'); 
         });
     });
 });
+
 
 Route::prefix('elearning')->group(function () {
     Route::prefix('addmateri')->group(function () {

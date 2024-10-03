@@ -17,7 +17,7 @@ class DatasiswaController extends Controller
 	public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware(['permission:import_siswa.index|import_siswa.create|import_siswa.singkron|import_siswa.delete']);
+        // $this->middleware(['permission:import_siswa.index|import_siswa.create|import_siswa.singkron|import_siswa.delete']);
     }
     public function index()
     {

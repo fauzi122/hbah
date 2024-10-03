@@ -34,7 +34,7 @@
       @endcan
         <li><a href="{{ url('/master/kelas') }}"><i class="fa fa-circle-o"></i> Kelas</a></li>
         @can('siswa.index')
-        <li><a href="{{ url('/master/siswa') }}"><i class="fa fa-circle-o"></i> Santri</a></li>
+        <li><a href="{{ url('/master/siswa') }}"><i class="fa fa-circle-o"></i> Siswa</a></li>
         @endcan
     </ul>
   </li>
@@ -87,8 +87,8 @@
       
         {{-- <li><a href="{{ url('/mapel') }}"><i class="fa fa-circle-o"></i> Import Mapel</a></li>
         <li><a href="{{ url('/datajawal') }}"><i class="fa fa-circle-o"></i> Import Jadwal</a></li> --}}
-        <li><a href="{{ url('/data') }}"><i class="fa fa-circle-o"></i> Import Santri</a></li>
-        <li><a href="{{ url('/biodata/santri') }}"><i class="fa fa-circle-o"></i> Import Biodata Santri</a></li>
+        <li><a href="{{ url('/data') }}"><i class="fa fa-circle-o"></i> Import Siswa</a></li>
+        <li><a href="{{ url('/biodata') }}"><i class="fa fa-circle-o"></i> Import Biodata Siswa</a></li>
    
     </ul>
   </li>
@@ -142,7 +142,7 @@
      
        
     <li><a href="{{ url('/front/post') }}"><i class="fa fa-circle-o"></i> Bentuk Kelas</a></li>
-    <li><a href="{{ url('/front/post') }}"><i class="fa fa-circle-o"></i> Data Calon Santri</a></li>
+    <li><a href="{{ url('/front/post') }}"><i class="fa fa-circle-o"></i> Data Calon Siswa</a></li>
     <li><a href="{{ url('/front/post') }}"><i class="fa fa-circle-o"></i> Formulir & Berkas</a></li>
     <li><a href="{{ url('/front/post') }}"><i class="fa fa-circle-o"></i> Data Cuti</a></li>
     <li><a href="{{ url('/front/post') }}"><i class="fa fa-circle-o"></i> Data Alumni</a></li>
@@ -170,7 +170,7 @@
 
   <li class="treeview">
     <a href="#">
-        <i class="fa fa-dollar"></i> <span>Infaq Santri</span>
+        <i class="fa fa-dollar"></i> <span>Infaq Siswa</span>
       <span class="pull-right-container">
         <i class="fa fa-angle-left pull-right"></i>
       </span>

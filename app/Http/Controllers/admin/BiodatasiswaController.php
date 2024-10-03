@@ -28,6 +28,7 @@ class BiodatasiswaController extends Controller
 		$biodata = Biodatasiswa::join('users', 'biodatasiswas.nisn','users.nisn')
 		->select('biodatasiswas.*','users.gambar')
 		->where('biodatasiswas.id',$id)->first();
+		// dd($biodata);
 		return view('biodata.show',compact('biodata'));
 	}
 

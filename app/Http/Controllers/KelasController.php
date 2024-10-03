@@ -74,7 +74,7 @@ class KelasController extends Controller
           return '<div style="text-align:center">
                             <a href="kelas/ubah/' . $kelas->id . '" class="btn btn-xs btn-primary">Ubah</a>
                             <button type="button" class="btn btn-xs btn-danger del-kelas" id=' . $kelas->id . '>Hapus</button>
-                            <a href="kelas/detail/' . $kelas->id . '" class="btn btn-xs btn-success">Detail</a>
+                            <a href="detail/' . $kelas->id . '" class="btn btn-xs btn-success">Detail</a>
                           </div>';
         })
         ->addColumn('siswa', function ($kelas) {

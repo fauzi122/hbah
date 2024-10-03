@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Support\Facades\Hash;
 
-use App\User;
+use App\Models\User;
 use App\Models\Soal;
 use App\Models\Aktifitas;
 use App\Models\Jawab;

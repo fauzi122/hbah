@@ -10,7 +10,7 @@
 </ol>
 @endsection
 @section('content')
-<?php include(app_path() . '/functions/myconf.php'); ?>
+{{-- <?php include(app_path() . '/functions/myconf.php'); ?> --}}
 <div class="col-md-12">
   <!-- Horizontal Form -->
   <div class="box box-info">
