@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="{{ url('/assets/dist/css/skins/_all-skins.min.css') }}">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
     folder instead of downloading all of them to reduce the load. -->
-    <link rel="shortcut icon" href="{{ asset('assets/img/smancis.jpg') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('assets/img/logo.jepg') }}" type="image/x-icon">
 
   <!-- iCheck -->
   <link rel="stylesheet" href="{{ url('/assets/plugins/iCheck/flat/blue.css') }}">

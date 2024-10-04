@@ -110,25 +110,7 @@
         
     </ul>
   </li>
-  @can('spp')
-  <li class="treeview">
-    <a href="#">
-        <i class="fa fa-dollar-sign"></i> <span>SPP</span>
-      <span class="pull-right-container">
-        <i class="fa fa-angle-left pull-right"></i>
-      </span>
-    </a>
-    <ul class="treeview-menu">
-     
-       
-    <li><a href="{{ url('/front/post') }}"><i class="fa fa-circle-o"></i> Data Kelas</a></li>
-    <li><a href="{{ url('/front/post') }}"><i class="fa fa-circle-o"></i> Data Bulan</a></li>
-    <li><a href="{{ url('/front/post') }}"><i class="fa fa-circle-o"></i> Telat Bayar SPP</a></li>
-
-             
-    </ul>
-  </li>
-  @endcan
+ 
   @can('Sumber Data')
 
   <li class="treeview">
@@ -187,6 +169,23 @@
   </li>
 
   {{--  @endcan  --}}
+  @can('Front Menu')
+  <li class="treeview">
+    <a href="#">
+        <i class="fa fa-folder"></i> <span>SIPP</span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu">
+     
+       
+    <li><a href="{{ url('/front/sipp') }}"><i class="fa fa-circle-o"></i> Data Pendaftar SIPP</a></li>
+
+             
+    </ul>
+  </li>
+  @endcan
   @can('Front Menu')
   <li class="treeview">
     <a href="#">

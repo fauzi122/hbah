@@ -12,6 +12,7 @@ use App\Http\Controllers\front\VideoController;
 use App\Http\Controllers\front\PriodedaftulangController;
 use App\Http\Controllers\front\PendaftardewasaController;
 use App\Http\Controllers\front\ProfilController;
+use App\Http\Controllers\admin\SippController;
 use App\Http\Controllers\admin\DaftarulangController;
 use App\Http\Controllers\KelasController;
 /*
@@ -52,6 +53,9 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('/form/pendaftaran-dewasa/{id}', 'dewasa');
     Route::get('/form/pendaftaran-sipp', 'sipp')->name('sipp');
 });
+Route::controller(BusinessRegistrationController::class)->group(function () {
+    Route::post('/store/form/pendaftaran-sipp', 'processForm')->middleware('throttle:form-submission');
+});
 
 Route::view('/sarpras', 'my-seals.events')->name('sarpras');
 
@@ -63,9 +67,7 @@ Route::controller(formulir\FormulirdewasaController::class)->group(function () {
     Route::post('/form/pendaftaran-dewasa', 'store');
 });
 
-Route::controller(BusinessRegistrationController::class)->group(function () {
-    Route::post('/form/pendaftaran-sipp', 'processForm');
-});
+
 
 
 Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
@@ -114,6 +116,9 @@ Route::prefix('front')->group(function () {
 
     Route::controller(front\VideoController::class)->group(function () {
         Route::resource('/video', VideoController::class, ['except' => 'show']);
+    });
+    Route::controller(admin\SippController::class)->group(function () {
+        Route::resource('/sipp', SippController::class, ['except' => 'show']);
     });
 
     Route::controller(front\PostController::class)->group(function () {

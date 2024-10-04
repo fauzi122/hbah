@@ -83,12 +83,12 @@ class FrontendController extends Controller
   {
     $profil= Profilsekolah::where('id', 1)->first();
     $priodeank=Priodedaftaranak::where('ket',1)->first();
-    $num1 = rand(1, 10); // Generate random number for captcha
-    $num2 = rand(1, 10); // Generate random number for captcha
-    $captchaResult = $num1 + $num2; // Calculate the result of captcha
-
-    // Store the captcha result in session to validate later
-    session(['captcha_result' => $captchaResult]);
+      // Buat dua angka acak untuk CAPTCHA
+      $num1 = rand(1, 10);
+      $num2 = rand(1, 10);
+  
+      // Simpan jawaban CAPTCHA di session
+      session(['captcha_answer' => $num1 + $num2]);
 
     return view('my-seals.daftar_anggota',compact('profil','priodeank','num1', 'num2'));
   }

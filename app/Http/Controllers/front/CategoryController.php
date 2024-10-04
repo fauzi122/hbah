@@ -16,7 +16,8 @@ class CategoryController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(['permission:categories.index|categories.create|categories.edit|sliders.delete']);
+        $this->middleware('auth');
+        // $this->middleware(['permission:categories.index|categories.create|categories.edit|sliders.delete']);
     }
 
     /**

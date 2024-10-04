@@ -15,7 +15,7 @@ class ImportJadwalController extends Controller
     public function __controller()
     {
         $this->middleware('auth');
-        $this->middleware(['permission:import_jadwal.index|import_jadwal.create|import_jadwal.edit|import_jadwal.delete']);
+        // $this->middleware(['permission:import_jadwal.index|import_jadwal.create|import_jadwal.edit|import_jadwal.delete']);
 
     }
 

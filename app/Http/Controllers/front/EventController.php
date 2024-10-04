@@ -15,11 +15,11 @@ class EventController extends Controller
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    //     $this->middleware(['permission:events.index|events.create|events.edit|events.delete']);
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth');
+        // $this->middleware(['permission:events.index|events.create|events.edit|events.delete']);
+    }
 
     /**
      * Display a listing of the resource.

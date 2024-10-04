@@ -8,10 +8,11 @@ use App\Visimisi;
 
 class VisimisiController extends Controller
 {
-    // public function __construct()
-    // {
+    public function __construct()
+    {
+        $this->middleware('auth');
     //     $this->middleware(['permission:visimisis.index|visimisis.create|visimisis.edit|visimisis.delete']);
-    // }
+    }
     /**
      * Display a listing of the resource.
      *

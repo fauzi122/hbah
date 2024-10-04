@@ -10,8 +10,27 @@
 <div class="row contact-row">
     <div class="container">
 <div class="container mt-5">
+    @if (session('success'))
+    <div class="bg-blue-500 border border-blue-700 text-white px-6 py-2 rounded-lg text-center max-w-lg mx-auto mt-6">
+        <h4 class="text-white text-lg font-semibold">
+            {{ session('success') }}
+        </h4>
+    </div>
+@endif
+
+@if ($errors->any())
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4 max-w-lg mx-auto mt-6">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
     <h2>Formulir Pendaftaran Anggota SIPP</h2>
-    <form action="/form/pendaftaran-sipp" method="POST" enctype="multipart/form-data">
+    <form action="/store/form/pendaftaran-sipp" method="POST" enctype="multipart/form-data">
         @csrf
 
         <!-- Field Nama Lengkap -->
@@ -25,7 +44,7 @@
 
         <div class="mb-3">
             <label for="email" class="form-label">Email:</label>
-            <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Masukkan Nama Lengkap" value="{{ old('email') }}">
+            <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Masukkan Email" value="{{ old('email') }}">
             @error('email')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
@@ -105,21 +124,21 @@
 
         <!-- Field Dokumentasi Kegiatan Usaha -->
         <div class="mb-3">
-            <label for="business_activity_documentation" class="form-label">Dokumentasi Kegiatan Usaha:</label>
-            <textarea class="form-control @error('business_activity_documentation') is-invalid @enderror" id="business_activity_documentation" name="business_activity_documentation" placeholder="Masukkan Dokumentasi Kegiatan Usaha">{{ old('business_activity_documentation') }}</textarea>
+            <label for="business_activity_documentation" class="form-label">Dokumentasi Kegiatan Usaha Link Video Youtube:</label>
+            <input type="url" class="form-control @error('business_activity_documentation') is-invalid @enderror" id="business_activity_documentation" name="business_activity_documentation" placeholder="Masukkan Dokumentasi Kegiatan Usaha Link Video Youtube" value="{{ old('business_activity_documentation') }}">
             @error('business_activity_documentation')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
+        
 
         <!-- CAPTCHA Calculation -->
-        <div class="mb-3">
-            <label for="captcha" class="form-label">Berapa hasil dari {{ $num1 }} + {{ $num2 }}?</label>
-            <input type="text" class="form-control @error('captcha') is-invalid @enderror" id="captcha" name="captcha" placeholder="Jawab Pertanyaan Ini">
-            @error('captcha')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
+        <label for="captcha" class="form-label">Berapa hasil dari {{ $num1 }} + {{ $num2 }}?</label>
+        <input type="text" class="form-control @error('captcha') is-invalid @enderror" id="captcha" name="captcha" placeholder="Jawab Pertanyaan Ini">
+        @error('captcha')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+        
 <BR></BR>
         <button type="submit" class="btn btn-primary">Daftar</button>
     </form>

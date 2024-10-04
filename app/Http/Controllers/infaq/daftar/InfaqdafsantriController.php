@@ -12,6 +12,11 @@ use App\Models\infaqdaftsantri;
 
 class InfaqdafsantriController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        // $this->middleware(['permission:daftaranak.index|daftaranak.create|daftaranak.edit|daftaranak.delete']);
+    }
     /**
      * Display a listing of the resource.
      *

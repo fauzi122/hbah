@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Support\Facades\RateLimiter;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -37,5 +39,16 @@ class AppServiceProvider extends ServiceProvider
             }
         });
         Schema::defaultStringLength(191);
+        {
+            $this->configureRateLimiting();
+        }
+    
+        
     }
+    protected function configureRateLimiting()
+        {
+            RateLimiter::for('form-submission', function ($request) {
+                return Limit::perMinute(5)->by($request->ip());
+            });
+        }
 }
