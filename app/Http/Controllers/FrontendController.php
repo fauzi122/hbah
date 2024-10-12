@@ -101,9 +101,16 @@ class FrontendController extends Controller
   }
   public function dewasa($id)
   {
+
     $profil= Profilsekolah::where('id', 1)->first();
     $pecah=explode(',',Crypt::decryptString($id));
-    return view('my-seals.formulir_dewasa',compact('profil','id','pecah'));
+          // Buat dua angka acak untuk CAPTCHA
+          $num1 = rand(1, 10);
+          $num2 = rand(1, 10);
+      
+          // Simpan jawaban CAPTCHA di session
+          session(['captcha_answer' => $num1 + $num2]);
+    return view('my-seals.formulir_dewasa',compact('profil','id','pecah','num1', 'num2'));
   }
 
   

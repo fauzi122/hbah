@@ -64,7 +64,7 @@ Route::controller(formulir\FormuliranakController::class)->group(function () {
 });
 
 Route::controller(formulir\FormulirdewasaController::class)->group(function () {
-    Route::post('/form/pendaftaran-dewasa', 'store');
+    Route::post('/form/pendaftaran-dewasa', 'store')->middleware('throttle:10,1');
 });
 
 

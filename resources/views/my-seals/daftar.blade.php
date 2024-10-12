@@ -51,6 +51,8 @@
 							<p></p>
 							Informasi Pendaftaran : <b>{{ $priodeank->priode }}</b><p></p>
 							Tanggal Pendaftaran   : <b>{{ $priodeank->tgl_awal }} - {{ $priodeank->tgl_akhir }}
+							
+								<h4>Calon Pendaftar Dapat Mengsisi Formulir Online dan Datang Langsung Untuk Melengkapi Berkas</h4>
 
 							</b>
 						</center> 

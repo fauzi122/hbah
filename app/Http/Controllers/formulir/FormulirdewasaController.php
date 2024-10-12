@@ -36,6 +36,22 @@ class FormulirdewasaController extends Controller
      */
     public function store(Request $request)
     {
+        // Waktu minimum antara dua request (dalam detik), misalnya 60 detik
+        $minimumInterval = 60;
+    
+        // Cek waktu request terakhir dari session
+        $lastRequestTime = session('last_request_time', 0);
+        $currentTime = time();
+    
+        // Jika waktu request terakhir kurang dari $minimumInterval, tolak request
+        if ($currentTime - $lastRequestTime < $minimumInterval) {
+            return redirect('/daftar')->with(['error' => 'Tunggu beberapa saat sebelum mengirim data lagi.']);
+        }
+    
+        // Simpan waktu request terbaru di session
+        session(['last_request_time' => $currentTime]);
+    
+        // Validasi input
         $this->validate($request, [
             'nm_lengkap'            => 'required',
             'nm_panggilan'          => 'required',
@@ -44,15 +60,15 @@ class FormulirdewasaController extends Controller
             'jk'                    => 'required',
             'email'                 => 'required|unique:formulir_anaks,email',
             'alamat'                => 'required',
-            'status'                => 'required',
             'kerja'                 => 'required',
             'alamat_kerja'          => 'required',
-            'pendidikan'            => 'required',
-            'no_hp'                 => 'required'
+            // 'pendidikan'            => 'required',
+            'no_hp'                 => 'required',
+            'captcha' => 'required|in:' . session()->get('captcha_answer'),
         ]);
-
+    
+        // Simpan data jika validasi berhasil
         $materi = formulir_dewasa::create([
-
             'id_priode'             => $request->input('id_priode'),
             'id_level'              => 2,
             'nm_lengkap'            => $request->input('nm_lengkap'),
@@ -62,21 +78,20 @@ class FormulirdewasaController extends Controller
             'jk'                    => $request->input('jk'),
             'email'                 => $request->input('email'),
             'alamat'                => $request->input('alamat'),
-            'status'                => $request->input('status'),
             'kerja'                 => $request->input('kerja'),
             'alamat_kerja'          => $request->input('alamat_kerja'),
-            'pendidikan'            => $request->input('pendidikan'),
+            // 'pendidikan'            => $request->input('pendidikan'),
             'no_hp'                 => $request->input('no_hp')
         ]);
     
+        // Redirect dengan pesan sukses atau error
         if($materi){
-            //redirect dengan pesan sukses
             return redirect('/daftar')->with(['success' => 'Data Berhasil Disimpan!']);
         }else{
-            //redirect dengan pesan error
             return redirect('/daftar')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
+    
 
     /**
      * Display the specified resource.

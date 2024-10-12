@@ -20,12 +20,12 @@
 					<div class="contact-form col-sm-12">
 					<div class="col-xs-12">
                         <center>
-						<h3><i class="fa fa-edit"></i>Formulir Pendaftaran Santri Baru Kategori Dewasa</h3>
+						<h3><i class="fa fa-edit"></i>Formulir Pendaftaran Siswa Baru</h3>
 					</center>
 					
                     </div>
 					<div class="col-xs-6">
-						<label>Nama Lengkap</label>
+						<label>Nama Lengkap Calon Siswa</label>
 						<input type="text" placeholder="Masukan Nama Lengkap" class="form-control @error('nm_lengkap') is-invalid @enderror" 
                         name="nm_lengkap" value="{{ old('nm_lengkap') }}">
 						@error('nm_lengkap')
@@ -35,7 +35,7 @@
 						@enderror
 					</div>
 					<div class="col-xs-6">
-						<label>Nama Panggilan</label>
+						<label>Nama Panggilan Calon Siswa</label>
 						<input type="text" placeholder="Masukan Nama Panggilan" class="form-control  @error('nm_panggilan') is-invalid @enderror"
                         name="nm_panggilan"value="{{ old('nm_panggilan') }}">
 						@error('nm_panggilan')
@@ -77,7 +77,7 @@
                         </select>
 					</div>
 					<div class="col-xs-6">
-						<label>Email</label>
+						<label>Email Orang Tua</label>
 						<input type="email" placeholder="Masukan Email Anda" class="form-control  @error('email') is-invalid @enderror"
                         name="email" value="{{ old('email') }}">
 						@error('email')
@@ -101,7 +101,7 @@
 					</div>
 
                     <div class="clearfix"></div>
-					<div class="col-xs-12">
+					{{-- <div class="col-xs-12">
 						<label>Status Perkawinan</label>
 						<select class="form-control selectpicker" name="status">
                             <optgroup label="Pilih Status Perkawinan">
@@ -111,7 +111,7 @@
                             </optgroup>
                          
                         </select>
-					</div>
+					</div> --}}
 				
                     <div class="col-xs-12">
 						<label>Pekerjaan </label>
@@ -134,7 +134,7 @@
 						@enderror
 					</div>
                 
-                    <div class="col-xs-12">
+                    {{-- <div class="col-xs-12">
 						<label>Pendidikan </label>
 						<input type="text" placeholder="Masukan  Pendidikan " class="form-control  @error('pendidikan_ortu') is-invalid @enderror"
                         name="pendidikan" value="{{ old('pendidikan') }}"></input>
@@ -143,7 +143,7 @@
 							{{ $message }}
 						</div>
 						@enderror
-					</div>
+					</div> --}}
 					{{--  <div class="col-xs-12">
 						<label>Pendidikan Orang Tua/Wali</label>
 						<select class="form-control  @error('file') is-invalid @enderror">
@@ -159,7 +159,7 @@
 					</div>  --}}
 
                     <div class="col-xs-12">
-						<label>No Hp </label>
+						<label>No Hp Orang Tua</label>
 						<input type="number" placeholder="Masukan No Hp " class="form-control  @error('no_hp_ortu') is-invalid @enderror"
                         name="no_hp" value="{{ old('no_hp') }}">
 						@error('no_hp')
@@ -168,7 +168,13 @@
 						</div>
 						@enderror
 					</div>
-					
+					<div class="col-xs-12">
+					<label for="captcha" class="form-label"><h4>Berapa hasil dari {{ $num1 }} + {{ $num2 }}?</h4></label>
+					<input type="text" class="form-control @error('captcha') is-invalid @enderror" id="captcha" name="captcha" placeholder="Jawab Pertanyaan Ini">
+					@error('captcha')
+						<div class="invalid-feedback">{{ $message }}</div>
+					@enderror
+				</div>
 					<div class="col-xs-12">
 						<p></p>
 						<button type="submit" class="btn btn-primary" ><i class="fa fa-paper-plane"></i> Kirim Data</button>

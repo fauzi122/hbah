@@ -133,7 +133,7 @@
         
 
         <!-- CAPTCHA Calculation -->
-        <label for="captcha" class="form-label">Berapa hasil dari {{ $num1 }} + {{ $num2 }}?</label>
+        <label for="captcha" class="form-label"><h4>Berapa hasil dari {{ $num1 }} + {{ $num2 }}?</h4></label>
         <input type="text" class="form-control @error('captcha') is-invalid @enderror" id="captcha" name="captcha" placeholder="Jawab Pertanyaan Ini">
         @error('captcha')
             <div class="invalid-feedback">{{ $message }}</div>
