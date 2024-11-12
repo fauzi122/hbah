@@ -24,7 +24,7 @@
 
         <h3 class="box-title">
 
-          <i class="fa fa-user-friends"></i> Biodata Santri </h3> 
+          <i class="fa fa-user-friends"></i> Biodata Siswa </h3> 
 
 		  <div class="pull-right">
 		</div>
@@ -108,7 +108,7 @@
 							<i class="fa fa-trash"></i> hapus
 						</button>
 
-                        <a href="/biodata/santri-show/{{ $b->no_induk }}" class="btn btn-xs btn-info"><i class="fa fa-tag"></i> detail</a> </td>
+                        <a href="/biodata/Siswa-show/{{ $b->no_induk }}" class="btn btn-xs btn-info"><i class="fa fa-tag"></i> detail</a> </td>
 				</tr>
 				@endforeach
 			</tbody>

@@ -21,10 +21,12 @@
                     <div class="event-date">
                         {{--  <p><span>10</span> SEP</p>  --}}
                     </div>
+                   
                     <h3>YAYASAN FADHILLAH ILMI</h3>
                     <P></P>
-                    <h3> Infaq : BSI : - Yayasan Fadhillah Ilmi : 0138265366100 </h3>
-                    <h3> Infaq : BSI : - Yayasan Fadhillah Ilmi : 0138265366100 </h3>
+                    <center>
+                    <h3> Infaq (Bank BJB) : 0138265366100  </h3>
+                    </center>
                     {{-- <h6><i class="fa fa-map-marker"></i>Playground</h6>  --}}
                     
                 </div>

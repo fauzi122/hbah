@@ -2,18 +2,7 @@
 
 @section('content')
 <div class="col-md-12">
-    @if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-      
-    </div>
-    @endif
 
-    @if (session('error'))
-        <div class="alert alert-success">
-            {{ session('error') }}
-        </div>
-    @endif
     <div class="box box-primary">
       <div class="box-header with-border">
         <h3 class="box-title">
@@ -45,7 +34,7 @@
                             <tr>
                                 <th scope="col" style="text-align: center;width: 6%">NO.</th>
                                 <th scope="col">JUDUL BERITA</th>
-                                <th scope="col">KATEGORI</th>
+                                <th scope="col">KONTEN</th>
                                 <th scope="col">IMAGE</th>
                                 <th scope="col" style="width: 15%;text-align: center">AKSI</th>
                             </tr>
@@ -54,10 +43,10 @@
                             @foreach ($posts as $no => $post)
                                 <tr>
                                     <th scope="row" style="text-align: center">{{ ++$no}}</th>
-                                    <td>{{ $post->nm_lengkap }}</td>
-                                    <td>{{ $post->nm_panggilan }}</td>
-                                    <td>
-                                    <td>{{ $post->tempat_lahir }}</td>
+                                    <td>{{ $post->title }}</td>
+                                    <td>{{ $post->content }}</td>
+                                    <td><img src="{{ Storage::url('public/posts/'.$post->image) }}" style="width: 150px"></td>
+
                                         
                                     </td>
                                     <td class="text-center">

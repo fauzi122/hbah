@@ -7,7 +7,7 @@
       <div class="box-header with-border">
         <h3 class="box-title">
             <i class="fa fa-check"></i>
-            List Daftar Ulang Santri</h3>
+            List Daftar Ulang Siswa</h3>
        
       </div>
      

@@ -8,7 +8,7 @@
 <div class="col-md-12">
   <div class="box box-primary">
     <div class="box-header with-border">
-      <h3 class="box-title">Master Data Santri</h3>
+      <h3 class="box-title">Master Data Siswa</h3>
       @if(Auth::user()->status == "A")
     
    
@@ -18,7 +18,7 @@
           <form method="post" action="crud/siswa/import_excel" enctype="multipart/form-data">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Import Data Santri</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Import Data Siswa</h5>
               </div>
               <div class="modal-body">
    
@@ -39,14 +39,14 @@
         </div>
       </div>
       <div class="pull-right">
-        <button type="button" class="btn btn-primary" id="btn-siswa"><i class="fa fa-user-plus"></i> Tambah Santri</button>
+        <button type="button" class="btn btn-primary" id="btn-siswa"><i class="fa fa-user-plus"></i> Tambah Siswa</button>
         <button type="button" class="btn btn-info mr-5" data-toggle="modal" 
         data-target="#importExcel" ><i class="fa fa-file-excel-o" aria-hidden="true"></i>
           IMPORT EXCEL
         </button>
         {{--  <button type="button" class="btn btn-success" id="btn-upload"><i class="fa fa-file-excel-o" aria-hidden="true"></i> Upload via Excel</button>  --}}
         <a href="{{ url('/download-file-format/siswa') }}" class="btn btn-success"><i class="fa fa-file-excel-o" aria-hidden="true"></i> Download format Excel</a>
-        <a href="{{ url('master/siswa/delete') }}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Hapus Semua Santri</a>
+        <a href="{{ url('master/siswa/delete') }}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Hapus Semua Siswa</a>
       </div>
       @endif
     </div>

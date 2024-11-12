@@ -7,7 +7,7 @@
       <div class="box-header with-border">
         <h3 class="box-title">
             <i class="fa fa-list-ol"></i>
-            Priode Pendaftaran Santri Baru</h3>
+            Priode Pendaftaran Siswa Baru</h3>
 
           
         <div class="box-tools pull-right">
@@ -74,7 +74,7 @@
 
                                         @can('posts.edit')
                                         <a href="{{ url('/infaq/pendaftaran/'.$id) }}" class="btn btn-sm btn-primary">
-                                            <i class="fa fa-user-check"title="List infaq santri" ></i>
+                                            <i class="fa fa-user-check"title="List infaq siswa" ></i>
                                         </a>
                                         @endcan
 

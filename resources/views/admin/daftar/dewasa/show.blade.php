@@ -11,7 +11,7 @@
 <div class="box">
     <div class="box-header">
         <h3 class="box-title">
-          <i class="fa fa-users"></i> Detail Biodata Calon Santri Baru
+          <i class="fa fa-users"></i> Detail Biodata Calon Siswa Baru
         </h3> 
     </div>
     <div class="box-body">

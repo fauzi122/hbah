@@ -7,7 +7,7 @@
       <div class="box-header with-border">
         <h3 class="box-title">
             <i class="fa fa-list-ol"></i>
-            Priode Pendaftaran Santri Baru</h3>
+            Priode Pendaftaran Siswa Baru</h3>
 
           
         <div class="box-tools pull-right">
@@ -63,7 +63,7 @@
 
                                    @endif
                                     </td>
-                                    <td>{{ $post->no_induk }}</td>
+                                    <td>{{ $post->no_induk }}</td>7
                                     <td>{{ $post->updated_at }}</td>
                                         
                                     
@@ -73,13 +73,10 @@
                                         @endphp
 
                                         @can('posts.edit')
-                                        <a href="{{ url('/front/daftar-anak/'.$id) }}" class="btn btn-sm btn-primary">
-                                            <i class="fa fa-user-check"title="List anak" ></i>
+                                        <a href="{{ url('/front/daftar-dewasa/'.$id) }}" class="btn btn-sm btn-primary">
+                                            <i class="fa fa-user-check"title="List Calon Siswa " ></i>
                                         </a>
 
-                                        <a href="{{ url('/front/daftar-dewasa/'.$id) }}" class="btn btn-sm btn-info">
-                                            <i class="fa fa-user-circle" title="List dewasa"></i>
-                                        </a>
                                         @endcan
 
                                         @can('posts.edit')

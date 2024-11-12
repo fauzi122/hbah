@@ -7,15 +7,15 @@
       <div class="box-header with-border">
         <h3 class="box-title">
             <i class="fa fa-file-excel"></i>
-            List Infaq Santri</h3>
+            List Infaq Siswa</h3>
        
       </div>
      
 <!-- Custom Tabs -->
 <div class="nav-tabs-custom">
   <ul class="nav nav-tabs">
-    <li class="active"><a href="#tab_1" data-toggle="tab">Infaq Pendaftaran</a></li>
-    <li><a href="#tab_2" data-toggle="tab">Infaq Buku</a></li>
+    <li class="active"><a href="#tab_1" data-toggle="tab">Infaq Buku</a></li>
+    <li><a href="#tab_2" data-toggle="tab">Infaq Pendaftaran </a></li>
     <li><a href="#tab_3" data-toggle="tab">Infaq QR</a></li>
    
 
@@ -42,14 +42,14 @@
 			<thead>
 				<tr>
 					<th>No</th>
-					<th>Nama Santri</th>
+					<th>Nama Siswa</th>
 					<th>Jenis Bayar</th>
 					<th>Tgl Bayar</th>
 					<th>Jml Bayar</th>
 					
 					<th>Petugas</th>
 					<th>Updated</th>
-					<th>Kategori</th>
+					
 					
 					
 					
@@ -113,14 +113,7 @@
 				  
 				  <td>{{ $post->petugas }}</td>
 				  <td>{{ $post->created_at }}</td>
-				  <td>
-					  @if ($post->id_level == 1)
-					  <center><span class="label label-success">Anak</label></center>
-					  @else
-					  <center><span class="label label-info">Dewasa</label></center>
-
-					  @endif
-				  </td>
+				  
 				
 				</tr>
 				  @endforeach
@@ -150,7 +143,7 @@
 						
 						<th>Petugas</th>
 						<th>Updated</th>
-						<th>Kategori</th>
+						
 	
 					</tr>
 				</thead>
@@ -166,14 +159,7 @@
 					  
 					  <td>{{ $post->petugas }}</td>
 					  <td>{{ $post->created_at }}</td>
-					  <td>
-						  @if ($post->id_level == 1)
-						  <center><span class="label label-success">Anak</label></center>
-						  @else
-						  <center><span class="label label-info">Dewasa</label></center>
-	
-						  @endif
-					  </td>
+					 
 					
 					</tr>
 					  @endforeach
@@ -201,7 +187,7 @@
 					
 					<th>Petugas</th>
 					<th>Updated</th>
-					<th>Kategori</th>
+					
 						
 					</tr>
 				</thead>
@@ -216,14 +202,7 @@
 					  
 					  <td>{{ $post->petugas }}</td>
 					  <td>{{ $post->created_at }}</td>
-					  <td>
-						  @if ($post->id_level == 1)
-						  <center><span class="label label-success">Anak</label></center>
-						  @else
-						  <center><span class="label label-info">Dewasa</label></center>
-	
-						  @endif
-					  </td>
+					 
 					
 					</tr>
 					  @endforeach
