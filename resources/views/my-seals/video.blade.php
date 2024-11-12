@@ -23,9 +23,9 @@
 							{{--  <iframe width="510" height="330" src="{{ $video->embed }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  --}}
 							<iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $video->embed }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						
-							{{--  <p></p>
+							 <p></p>
 							<h4><i class="fa fa-angle-double-right"></i> {{ $video->title }}</h4>
-							<p></p><i class="fa fa-calendar"></i> {{ $video->created_at }}  --}}
+							<p></p><i class="fa fa-calendar"></i> {{ $video->created_at }} 
 							
 						</div>
 					</div>
