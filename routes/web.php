@@ -98,7 +98,7 @@ Route::prefix('crud')->group(function () {
         Route::post('update-guru', 'updateGuru');
         Route::post('delete-guru', 'deleteGuru');
         Route::post('simpan-kelas', 'simpanKelas');
-        Route::post('delete-kelas', 'deleteKelas');
+        Route::delete('delete-kelas/{id}', 'deleteKelas');
         Route::post('reset-ujian', 'resetUjian');
         Route::patch('/update/{user}', 'update_profil');
     });
@@ -269,6 +269,7 @@ Route::prefix('master')->group(function () {
             Route::get('data-guru', 'dataGuru')->name('master.data_guru');
             Route::get('detail/{id}', 'detailGuru')->name('master.detail_guru');
             Route::get('ubah/{id}', 'ubahGuru')->name('master.ubah_guru');
+            Route::patch('update/{id}', 'update')->name('guru.update');
         });
     });
 

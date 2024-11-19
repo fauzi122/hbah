@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Storage;
 use Image;
-
+use Illuminate\Support\Facades\DB;
 use Session;
 use App\Models\User;
 use App\Models\Materi;
@@ -142,12 +142,19 @@ class CrudController extends Controller
     }
   }
 
-  public function deleteKelas(Request $request)
+  public function deleteKelas(Request $request, $id)
   {
-    User::where('id_kelas', $request->id_kelas)->update(['id_kelas' => '']);
-    Kelas::find($request->id_kelas)->delete();
-    return 1;
+      $kelas = Kelas::findOrFail($id); // Gunakan findOrFail untuk langsung menangani kelas yang tidak ditemukan
+  
+      DB::transaction(function () use ($kelas) {
+          User::where('id_kelas', $kelas->id)->update(['id_kelas' => null]); // Mengosongkan referensi id_kelas pada user
+          $kelas->delete();
+      });
+  
+      return redirect()->route('master.kelas')->with('success', 'Kelas berhasil dihapus.');
   }
+  
+  
 
   public function deleteGuru(Request $request)
   {
@@ -280,4 +287,7 @@ class CrudController extends Controller
     $aktifitas->nama = 'Mereset data nilai siswa atas nama: ' . $siswa->nama;
     $aktifitas->save();
   }
+
+  
 }
+

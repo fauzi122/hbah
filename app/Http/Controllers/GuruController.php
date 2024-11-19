@@ -9,7 +9,7 @@ use Auth;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
 
-
+use Illuminate\Support\Facades\Hash;
 
 use App\Models\User;
 use App\Models\Aktifitas;
@@ -89,4 +89,22 @@ class GuruController extends Controller
      return redirect('/home');
     }
   }
+  public function update(Request $request, $id)
+{
+  // dd($id);
+    $guru = User::findOrFail($id);
+    $guru->nama = $request->nama;
+    $guru->no_induk = $request->no_induk;
+    $guru->email = $request->email;
+    $guru->jk = $request->jk;
+
+    if (!empty($request->password)) {
+        $guru->password = Hash::make($request->password);
+    }
+
+    $guru->save();
+
+    return redirect()->to('master/guru/detail/' . $guru->id)->with('success', 'Data guru berhasil diupdate.');
+}
+
 }

@@ -58,6 +58,16 @@ $status_user = getStatus($user->status);
 	    		<td>Wali</td>
 	    		<td>{{ $kelas->wali->nama }}</td>
 	    	</tr>
+        <tr>
+          <td>Hapus Kelas</td>
+          <td> <form action="{{ url('crud/delete-kelas', $kelas->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus semua siswa dari kelas ini?');">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger">
+                <i class="fa fa-trash"></i> Kosongkan Kelas
+            </button>
+        </form></td>
+        </tr>
 	    </table>
     </div>
   </div>

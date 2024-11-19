@@ -43,7 +43,7 @@ class KelasController extends Controller
           return '';
         })
         ->addColumn('action', function ($kelas) {
-          return '<div style="text-align:center"><a href="kelas/detail/' . $kelas->id . '" class="btn btn-xs btn-success">Detail</a></div>';
+          return '<div style="text-align:center"><a href="master/kelas/detail/' . $kelas->id . '" class="btn btn-xs btn-success">Detail</a></div>';
         })
         ->addColumn('siswa', function ($kelas) {
           if ($kelas) {
@@ -73,8 +73,8 @@ class KelasController extends Controller
         ->addColumn('action', function ($kelas) {
           return '<div style="text-align:center">
                             <a href="kelas/ubah/' . $kelas->id . '" class="btn btn-xs btn-primary">Ubah</a>
-                            <button type="button" class="btn btn-xs btn-danger del-kelas" id=' . $kelas->id . '>Hapus</button>
-                            <a href="detail/' . $kelas->id . '" class="btn btn-xs btn-success">Detail</a>
+                           
+                            <a href="kelas/detail/' . $kelas->id . '" class="btn btn-xs btn-success">Detail</a>
                           </div>';
         })
         ->addColumn('siswa', function ($kelas) {
