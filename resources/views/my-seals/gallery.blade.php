@@ -23,6 +23,8 @@
 							{{-- <img src="{{ asset('frontend-assets/images/news-sm1.jpg')}}" alt="Cruise"> --}}
 							<img src="{{ Storage::url('public/photos/'.$photo->image) }}" style="width: 350px"
 							alt="Cruise">
+							<br>
+						<center><b>{{ $photo->caption }}</b></center>
 						</div>
 					</div>
 					@empty
