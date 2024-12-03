@@ -59,7 +59,7 @@ class PostController extends Controller
     {
         $this->validate($request,[
             'image'         => 'required|image|mimes:jpeg,jpg,png|max:2000',
-            'title'         => 'required|unique:posts',
+            'title'         => 'required',
             'category_id'   => 'required',
             'content'       => 'required',
         ]);

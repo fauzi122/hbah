@@ -122,7 +122,10 @@ Route::prefix('front')->group(function () {
     });
 
     Route::controller(front\PostController::class)->group(function () {
-        Route::resource('/post', PostController::class, ['except' => 'show']);
+        Route::get('/post', 'index');
+        Route::get('/post/create', 'create');
+        Route::post('/post/store', 'store');
+       
     });
 
     Route::controller(front\EventController::class)->group(function () {

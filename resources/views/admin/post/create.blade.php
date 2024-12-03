@@ -14,7 +14,7 @@
       <div class="box-body">
 
                     <div class="card-body">
-                        <form action="/front/post/" method="POST" enctype="multipart/form-data">
+                        <form action="/front/post/store" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group">
