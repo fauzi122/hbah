@@ -14,7 +14,7 @@
       <div class="box-body">
 
                 <div class="card-body">
-                    <form action="/front/post/{{ $post->id }}" method="POST"
+                    <form action="/front/post/update/{{ $post->id }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')

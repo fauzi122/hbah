@@ -125,6 +125,9 @@ Route::prefix('front')->group(function () {
         Route::get('/post', 'index');
         Route::get('/post/create', 'create');
         Route::post('/post/store', 'store');
+        Route::get('/post/edit/{id}', 'edit');
+        Route::put('/post/update/{id}', 'update');
+        Route::delete('/post/destroy/{id}', 'destroy');
        
     });
 
