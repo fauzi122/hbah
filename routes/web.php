@@ -43,6 +43,7 @@ Route::get('/', function () {
 Route::controller(FrontendController::class)->group(function () {
     Route::get('/', 'index')->name('beranda');
     Route::get('/events', 'events')->name('events');
+    Route::get('/berita-all', 'berita_all')->name('berita-all');
     Route::get('/events-detail/{id}', 'events_detail');
     Route::get('/donasi', 'berita')->name('berita');
     Route::get('/berita-detail/{id}', 'berita_detail');

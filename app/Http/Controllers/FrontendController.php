@@ -36,6 +36,13 @@ class FrontendController extends Controller
     return view('my-seals.events', compact('events','profil'));
   }
 
+  public function berita_all()
+  {
+    $events = Post::all();
+    $profil= Profilsekolah::where('id', 1)->first();
+    return view('my-seals.posts', compact('events','profil'));
+  }
+
   public function events_detail($id)
   {
     $events = Event::where('id', $id)->first();
