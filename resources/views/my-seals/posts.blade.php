@@ -5,7 +5,7 @@
     <!-- Page Title Section -->
     <div class="row page-title page-title-events">
         <div class="container">
-            <h2><i class="fa fa-calendar"></i>EVENTS</h2>
+            <h2><i class="fa fa-calendar"></i>News All</h2>
         </div>
     </div>
 
