@@ -15,6 +15,7 @@ use App\Http\Controllers\front\ProfilController;
 use App\Http\Controllers\admin\SippController;
 use App\Http\Controllers\admin\DaftarulangController;
 use App\Http\Controllers\KelasController;
+// use App\Http\Controllers\PostController;
 
 
 /*
@@ -121,7 +122,17 @@ Route::prefix('front')->group(function () {
         Route::resource('/video', VideoController::class, ['except' => 'show']);
     });
 
-
+    Route::middleware(['web'])->group(function () {
+        Route::controller(PostController::class)->group(function () {
+            Route::get('/post', 'index');
+            Route::get('/post/create', 'create');
+            Route::post('/post/store', 'store');
+            Route::get('/post/edit/{id}', 'edit');
+            Route::put('/berita/update/{post}', 'update')->name('berita.update');
+            Route::delete('/post/destroy/{id}', 'destroy');
+        });
+    });
+    
     Route::controller(SippController::class)->group(function () {
         Route::get('/sipp', 'index')->name('sipp.index');
         Route::get('/sipp/create', 'create')->name('sipp.create');
@@ -133,19 +144,17 @@ Route::prefix('front')->group(function () {
     });
 
 
-    Route::controller(front\PostController::class)->group(function () {
-        Route::get('/post', 'index');
-        Route::get('/post/create', 'create');
-        Route::post('/post/store', 'store');
-        Route::get('/post/edit/{id}', 'edit');
-        Route::put('/post/update/{id}', 'update');
-        Route::delete('/post/destroy/{id}', 'destroy');
-       
+    Route::controller(EventController::class)->group(function () {
+        Route::get('/event', 'index')->name('event.index');
+        Route::get('/event/create', 'create')->name('event.create');
+        Route::post('/event', 'store')->name('event.store');
+        Route::get('/event/{event}/edit', 'edit')->name('event.edit');
+        Route::put('/event/{event}', 'update')->name('event.update');
+        Route::delete('/event/{event}', 'destroy')->name('event.destroy');
     });
 
-    Route::controller(front\EventController::class)->group(function () {
-        Route::resource('/event', EventController::class, ['except' => 'show']);
-    });
+
+
 
     Route::controller(front\ProfilController::class)->group(function () {
         Route::resource('/profil', ProfilController::class, ['except' => 'show']);

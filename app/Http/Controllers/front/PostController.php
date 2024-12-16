@@ -96,11 +96,13 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit($id)
     {
-        // $tags = Tag::latest()->get();
+        $post = Post::where('id',$id)->first();
+        // $tags = Tag::get();
+        // dd($post);
         $categories = Category::latest()->get();
-        return view('admin.post.edit', compact('post', 'categories'));
+        return view('admin.post.edit', compact('post', 'categories','id'));
     }
 
     /**
@@ -113,7 +115,7 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         $this->validate($request,[
-            'title'         => 'required|unique:posts,title,'.$post->id,
+            'title'         => 'required',
             'category_id'   => 'required',
             'content'       => 'required',
         ]);

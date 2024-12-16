@@ -50,11 +50,11 @@
                                         
                                     </td>
                                     <td class="text-center">
-                                        {{-- @can('posts.edit')
+                                        @can('posts.edit')
                                             <a href="/front/post/edit/{{ $post->id}}" class="btn btn-sm btn-primary">
                                                 <i class="fa fa-edit"></i>
                                             </a>
-                                        @endcan --}}
+                                        @endcan
 
                                         {{--  @can('posts.delete')  --}}
                                             <button onClick="Delete(this.id)" class="btn btn-sm btn-danger" id="{{ $post->id }}">

@@ -14,10 +14,13 @@
       <div class="box-body">
 
                 <div class="card-body">
-                    <form action="/front/post/update/{{ $post->id }}" method="POST"
-                        enctype="multipart/form-data">
+                    <form action="{{ route('berita.update', $post->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
+                        <!-- Input form Anda di sini -->
+                       
+                  
+                    
                         <div class="form-group">
                             <label>GAMBAR</label>
                             <input type="file" name="image" class="form-control @error('image') is-invalid @enderror">
@@ -60,7 +63,7 @@
                             <label>KONTEN</label>
                             <textarea class="form-control content @error('content') is-invalid @enderror" name="content"
                                 placeholder="Masukkan Konten / Isi Berita" 
-                                rows="10">{!! old('content', $post->content) !!}</textarea>
+                                rows="10" id="summernote">{!! old('content', $post->content) !!}</textarea>
                             @error('content')
                             <div class="invalid-feedback" style="display: block">
                                 {{ $message }}
@@ -68,15 +71,15 @@
                             @enderror
                         </div>
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label class="font-weight-bold">TAGS</label>
                             <select class="form-control" name="tags[]"
                                 multiple="multiple">
-                                {{--  @foreach ($tags as $tag)
+                                 @foreach ($tags as $tag)
                                     <option value="{{$tag->id}}" {{ in_array($tag->id, $post->tags()->pluck('id')->toArray()) ? 'selected' : '' }}> {{ $tag->name }}</option>
-                                @endforeach  --}}
+                                @endforeach 
                             </select>
-                        </div>
+                        </div> --}}
 
                         <button class="btn btn-primary mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i>
                             UPDATE</button>
@@ -89,4 +92,12 @@
               </div>
           </div>
         </div>
+        <script>
+            $(document).ready(function() {
+                $('#summernote').summernote({
+                    height: 200 // set editor height
+                });
+            });
+        </script>
+      
 @stop
