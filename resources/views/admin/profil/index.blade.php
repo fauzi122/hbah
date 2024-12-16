@@ -88,8 +88,9 @@
         
         <tbody>
             <td>{{ $visi->no_induk }}</td>
-            <td>{{ $visi->visi }}</td>
-            <td>{{ $visi->misi }}</td>
+            <td>{!! $visi->visi !!}</td>
+            <td>{!! $visi->misi !!}</td>
+            {{-- <td>{ !! $visi->misi !!}</td> --}}
             <td>{{ $visi->created_at }}</td>
         </tbody>
     </table>

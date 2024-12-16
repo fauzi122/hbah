@@ -25,7 +25,7 @@
                              
                                 <textarea class="form-control content @error('visi') is-invalid @enderror" name="visi"
                                     placeholder="Masukkan Konten / Isi Berita" 
-                                    rows="10">{!! old('visi', $visimisi->visi) !!}</textarea>
+                                    rows="10" id="summernote1">{!! old('visi', $visimisi->visi) !!}</textarea>
                                 @error('visi')
                                 <div class="invalid-feedback" style="display: block">
                                     {{ $message }}
@@ -39,7 +39,7 @@
                              
                                 <textarea class="form-control content @error('misi') is-invalid @enderror" name="misi"
                                     placeholder="Masukkan Konten / Isi Berita" 
-                                    rows="10">{!! old('misi', $visimisi->misi) !!}</textarea>
+                                    rows="10" id="summernote">{!! old('misi', $visimisi->misi) !!}</textarea>
                                 @error('misi')
                                 <div class="invalid-feedback" style="display: block">
                                     {{ $message }}
@@ -61,5 +61,29 @@
             </div>
             
 
-    
+
+            <head>
+                <title>Summernote Example</title>
+                <!-- Include libraries (jQuery, Bootstrap) -->
+               
+            </head>
+     
+                
+                <!-- Initialize Summernote -->
+                <script>
+                    $(document).ready(function() {
+                        $('#summernote').summernote({
+                            height: 200 // set editor height
+                        });
+                    });
+                </script>
+                <script>
+                    $(document).ready(function() {
+                        $('#summernote1').summernote({
+                            height: 200 // set editor height
+                        });
+                    });
+                </script>
+           
+            
 @stop

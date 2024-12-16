@@ -15,6 +15,8 @@ use App\Http\Controllers\front\ProfilController;
 use App\Http\Controllers\admin\SippController;
 use App\Http\Controllers\admin\DaftarulangController;
 use App\Http\Controllers\KelasController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -118,9 +120,18 @@ Route::prefix('front')->group(function () {
     Route::controller(front\VideoController::class)->group(function () {
         Route::resource('/video', VideoController::class, ['except' => 'show']);
     });
-    Route::controller(admin\SippController::class)->group(function () {
-        Route::resource('/sipp', SippController::class, ['except' => 'show']);
+
+
+    Route::controller(SippController::class)->group(function () {
+        Route::get('/sipp', 'index')->name('sipp.index');
+        Route::get('/sipp/create', 'create')->name('sipp.create');
+        Route::post('/sipp', 'store')->name('sipp.store');
+        Route::get('/sipp/{member}/edit', 'edit')->name('sipp.edit');
+        Route::put('/sipp/{member}', 'update')->name('sipp.update');
+        Route::delete('/sipp/{member}', 'destroy')->name('sipp.destroy');
+
     });
+
 
     Route::controller(front\PostController::class)->group(function () {
         Route::get('/post', 'index');

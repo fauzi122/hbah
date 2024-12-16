@@ -85,8 +85,8 @@
         </h6>
         <h3>Sambutan Kepala Sekolah</h3>
         <p class="justify">
-            
-         {{ $sambutan->des }}
+            {!! $sambutan->des !!}
+        
         </p>
         <p>
        
@@ -113,7 +113,8 @@
                     
                     <h1>Sejarah Singkat</h1>
                     <p>
-                       {{ $sejarah->des }}
+                        {!! $sejarah->des !!}
+                      
                     </p>
                 </div>
                 <div class="col-md-9 fact-item">
@@ -124,7 +125,8 @@
                         <div class="col-xs-9">
                             <h2>VISI</h2>
                             <p>
-                              {{ $visi->visi }}
+                                {!! $visi->visi !!}
+                            
                             </p>
                         </div>
                         <div class="clearfix"></div>
@@ -136,7 +138,8 @@
                         <div class="col-xs-9">
                             <h2>Misi</h2>
                             <p>
-                                {{ $visi->misi }}
+                                {!! $visi->misi !!}
+                                {{-- {{ $visi->misi }} --}}
                             </p>
                         </div>
                         <div class="clearfix"></div>

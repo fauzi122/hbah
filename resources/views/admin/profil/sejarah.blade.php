@@ -24,7 +24,7 @@
                              
                                 <textarea class="form-control content @error('des') is-invalid @enderror" name="des"
                                     placeholder="Masukkan Konten / Isi Berita" 
-                                    rows="10">{!! old('des', $sejarah->des) !!}</textarea>
+                                    rows="10" id="summernote">{!! old('des', $sejarah->des) !!}</textarea>
                                 @error('des')
                                 <div class="invalid-feedback" style="display: block">
                                     {{ $message }}
@@ -46,5 +46,11 @@
             </div>
             
 
-    
+            <script>
+              $(document).ready(function() {
+                  $('#summernote').summernote({
+                      height: 200 // set editor height
+                  });
+              });
+          </script>
 @stop
