@@ -18,7 +18,7 @@
 							
 							
 						</h5>
-						<p>{{ $berita->content }}</p>
+						<p>{!! $berita->content !!}</p>
 						<img src="{{ Storage::url('public/posts/'.$berita->image) }}">
 						
 
